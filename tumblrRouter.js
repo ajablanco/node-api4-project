@@ -5,11 +5,14 @@ const router = express.Router();
 router.use(express.json());
 
 router.get("/", (req, res) => {
-  //READ
-  const message = process.env.MESSAGE || "hello from localhost";
+  data = {aja: 'hello'}
+  res.status(200).json({data})
+})
 
-  //RETURN
-  res.status(200).json({ api: "up", message });
-});
+router.get("/info", (req, res) => {
+  data= req.body
+  res.status(200).json({data});
+})
+
 
 module.exports = router;
